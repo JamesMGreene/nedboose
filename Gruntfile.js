@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 
     env: {
       options: {
-        
+
       },
       dev: {
         NODE_ENV: 'development'
@@ -86,6 +86,22 @@ module.exports = function(grunt) {
       }
     },
 
+    clean: {
+      docs: {
+        src: ['<%= jsdoc.docs.dest %>']
+      }
+    },
+
+    jsdoc: {
+      options: {
+        configure: '.jsdoc.conf.json'
+      },
+      docs: {
+        src: ['README.md', 'index.{js,jsdoc}', 'src/**/*.{js,jsdoc}', 'lib/**/*.{js,jsdoc}'],
+        dest: 'docs/'
+      }
+    },
+
     mochacov: {
       options: {
         files: ['test/**/*.spec.js']
@@ -133,9 +149,11 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-env');
+  grunt.loadNpmTasks('grunt-jsdoc');
   grunt.loadNpmTasks('grunt-mocha-cov');
   grunt.loadNpmTasks('grunt-open');
 
@@ -144,7 +162,7 @@ module.exports = function(grunt) {
   grunt.registerTask('validate', ['jshint', 'mochacov:test', 'mochacov:coverage']);
 
   // Default task.
-  grunt.registerTask('default', ['env:dev', 'validate', 'browserify', 'uglify']);
+  grunt.registerTask('default', ['env:dev', 'validate', 'browserify', 'uglify', 'clean', 'jsdoc']);
 
   // Travis CI task.
   grunt.registerTask('travis', ['env:travis', 'validate', 'mochacov:coveralls']);

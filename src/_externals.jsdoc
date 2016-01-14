@@ -1,0 +1,14 @@
+/**
+ * NeDB (Node.js Embedded Database), a.k.a. the JavaScript Database.
+ *
+ * @external NeDB
+ * @see {@link https://github.com/louischatriot/nedb NeDB}
+ */
+
+
+/**
+ * The Node.js `require('events').EventEmitter` class.
+ *
+ * @external EventEmitter
+ * @see {@link https://nodejs.org/api/events.html#events_class_eventemitter EventEmitter}
+ */

@@ -7,7 +7,8 @@
 ## Install
 
 ```shell
-$ npm install nedboose
+$ npm install --save nedb
+$ npm install --save nedboose
 ```
 
 

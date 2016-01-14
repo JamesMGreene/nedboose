@@ -32,7 +32,7 @@
     "db",
     "collection"
   ],
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "grunt travis --verbose"
   },
@@ -59,13 +59,16 @@
     "chai": "^3.4.1",
     "grunt": "^0.4.5",
     "grunt-browserify": "^4.0.1",
+    "grunt-contrib-clean": "^0.7.0",
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-env": "^0.4.4",
+    "grunt-jsdoc": "^1.1.0",
     "grunt-mocha-cov": "^0.4.0",
     "grunt-open": "^0.2.3",
     "mocha": "^2.3.4",
     "nedb": "^1.6.0",
     "travis-cov": "^0.2.5"
-  }
+  },
+  "dependencies": {}
 }
